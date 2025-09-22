@@ -11,10 +11,9 @@ export default defineConfig({
     tsConfigPaths(),
     tanstackStart({ 
       customViteReactPlugin: true,
-      // TanStack Router config
       tsr: {
-        routesDirectory: 'src/app/routes',
-        generatedRouteTree: 'src/app/routeTree.gen.ts',
+        routesDirectory: 'src/1-app/routes',
+        generatedRouteTree: 'src/1-app/routeTree.gen.ts',
         routeFileIgnorePrefix: '-',
         quoteStyle: 'single'
       },

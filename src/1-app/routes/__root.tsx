@@ -1,13 +1,21 @@
 // src/routes/__root.tsx
+// https://tanstack.com/start/latest/docs/framework/react/build-from-scratch
+// https://chakra-ui.com/docs/theming/overview
+
 /// <reference types="vite/client" />
-import type { ReactNode } from 'react'
+import type { ReactNode } from 'react';
 import {
   Outlet,
   createRootRoute,
   HeadContent,
   Scripts,
-} from '@tanstack/react-router'
+} from '@tanstack/react-router';
+import {
+  ChakraProvider
+} from '@chakra-ui/react';
+import { system } from '~/1-app/theme';
 
+// Define the Root Route for TanStack Router
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -19,19 +27,21 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'TanStack Start with Chakra UI v3',
       },
     ],
   }),
   component: RootComponent,
-})
+});
 
 function RootComponent() {
   return (
     <RootDocument>
-      <Outlet />
+      <ChakraProvider value={system}>
+        <Outlet />
+      </ChakraProvider>
     </RootDocument>
-  )
+  );
 }
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
@@ -45,5 +55,5 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <Scripts />
       </body>
     </html>
-  )
+  );
 }
