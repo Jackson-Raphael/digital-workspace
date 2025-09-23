@@ -9,50 +9,205 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as LayoutRouteImport } from './routes/_layout'
+import { Route as LayoutIndexRouteImport } from './routes/_layout.index'
+import { Route as LayoutReportsRouteImport } from './routes/_layout.reports'
+import { Route as LayoutRecommendationsRouteImport } from './routes/_layout.recommendations'
+import { Route as LayoutObservationsRouteImport } from './routes/_layout.observations'
+import { Route as LayoutLessonsRouteImport } from './routes/_layout.lessons'
+import { Route as LayoutInsightsRouteImport } from './routes/_layout.insights'
+import { Route as LayoutActionsRouteImport } from './routes/_layout.actions'
 
-const IndexRoute = IndexRouteImport.update({
+const LayoutRoute = LayoutRouteImport.update({
+  id: '/_layout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LayoutIndexRoute = LayoutIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => LayoutRoute,
+} as any)
+const LayoutReportsRoute = LayoutReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => LayoutRoute,
+} as any)
+const LayoutRecommendationsRoute = LayoutRecommendationsRouteImport.update({
+  id: '/recommendations',
+  path: '/recommendations',
+  getParentRoute: () => LayoutRoute,
+} as any)
+const LayoutObservationsRoute = LayoutObservationsRouteImport.update({
+  id: '/observations',
+  path: '/observations',
+  getParentRoute: () => LayoutRoute,
+} as any)
+const LayoutLessonsRoute = LayoutLessonsRouteImport.update({
+  id: '/lessons',
+  path: '/lessons',
+  getParentRoute: () => LayoutRoute,
+} as any)
+const LayoutInsightsRoute = LayoutInsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => LayoutRoute,
+} as any)
+const LayoutActionsRoute = LayoutActionsRouteImport.update({
+  id: '/actions',
+  path: '/actions',
+  getParentRoute: () => LayoutRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/actions': typeof LayoutActionsRoute
+  '/insights': typeof LayoutInsightsRoute
+  '/lessons': typeof LayoutLessonsRoute
+  '/observations': typeof LayoutObservationsRoute
+  '/recommendations': typeof LayoutRecommendationsRoute
+  '/reports': typeof LayoutReportsRoute
+  '/': typeof LayoutIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/actions': typeof LayoutActionsRoute
+  '/insights': typeof LayoutInsightsRoute
+  '/lessons': typeof LayoutLessonsRoute
+  '/observations': typeof LayoutObservationsRoute
+  '/recommendations': typeof LayoutRecommendationsRoute
+  '/reports': typeof LayoutReportsRoute
+  '/': typeof LayoutIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/_layout': typeof LayoutRouteWithChildren
+  '/_layout/actions': typeof LayoutActionsRoute
+  '/_layout/insights': typeof LayoutInsightsRoute
+  '/_layout/lessons': typeof LayoutLessonsRoute
+  '/_layout/observations': typeof LayoutObservationsRoute
+  '/_layout/recommendations': typeof LayoutRecommendationsRoute
+  '/_layout/reports': typeof LayoutReportsRoute
+  '/_layout/': typeof LayoutIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/actions'
+    | '/insights'
+    | '/lessons'
+    | '/observations'
+    | '/recommendations'
+    | '/reports'
+    | '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/actions'
+    | '/insights'
+    | '/lessons'
+    | '/observations'
+    | '/recommendations'
+    | '/reports'
+    | '/'
+  id:
+    | '__root__'
+    | '/_layout'
+    | '/_layout/actions'
+    | '/_layout/insights'
+    | '/_layout/lessons'
+    | '/_layout/observations'
+    | '/_layout/recommendations'
+    | '/_layout/reports'
+    | '/_layout/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  LayoutRoute: typeof LayoutRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/_layout': {
+      id: '/_layout'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof LayoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_layout/': {
+      id: '/_layout/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof LayoutIndexRouteImport
+      parentRoute: typeof LayoutRoute
+    }
+    '/_layout/reports': {
+      id: '/_layout/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof LayoutReportsRouteImport
+      parentRoute: typeof LayoutRoute
+    }
+    '/_layout/recommendations': {
+      id: '/_layout/recommendations'
+      path: '/recommendations'
+      fullPath: '/recommendations'
+      preLoaderRoute: typeof LayoutRecommendationsRouteImport
+      parentRoute: typeof LayoutRoute
+    }
+    '/_layout/observations': {
+      id: '/_layout/observations'
+      path: '/observations'
+      fullPath: '/observations'
+      preLoaderRoute: typeof LayoutObservationsRouteImport
+      parentRoute: typeof LayoutRoute
+    }
+    '/_layout/lessons': {
+      id: '/_layout/lessons'
+      path: '/lessons'
+      fullPath: '/lessons'
+      preLoaderRoute: typeof LayoutLessonsRouteImport
+      parentRoute: typeof LayoutRoute
+    }
+    '/_layout/insights': {
+      id: '/_layout/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof LayoutInsightsRouteImport
+      parentRoute: typeof LayoutRoute
+    }
+    '/_layout/actions': {
+      id: '/_layout/actions'
+      path: '/actions'
+      fullPath: '/actions'
+      preLoaderRoute: typeof LayoutActionsRouteImport
+      parentRoute: typeof LayoutRoute
     }
   }
 }
 
+interface LayoutRouteChildren {
+  LayoutActionsRoute: typeof LayoutActionsRoute
+  LayoutInsightsRoute: typeof LayoutInsightsRoute
+  LayoutLessonsRoute: typeof LayoutLessonsRoute
+  LayoutObservationsRoute: typeof LayoutObservationsRoute
+  LayoutRecommendationsRoute: typeof LayoutRecommendationsRoute
+  LayoutReportsRoute: typeof LayoutReportsRoute
+  LayoutIndexRoute: typeof LayoutIndexRoute
+}
+
+const LayoutRouteChildren: LayoutRouteChildren = {
+  LayoutActionsRoute: LayoutActionsRoute,
+  LayoutInsightsRoute: LayoutInsightsRoute,
+  LayoutLessonsRoute: LayoutLessonsRoute,
+  LayoutObservationsRoute: LayoutObservationsRoute,
+  LayoutRecommendationsRoute: LayoutRecommendationsRoute,
+  LayoutReportsRoute: LayoutReportsRoute,
+  LayoutIndexRoute: LayoutIndexRoute,
+}
+
+const LayoutRouteWithChildren =
+  LayoutRoute._addFileChildren(LayoutRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  LayoutRoute: LayoutRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
