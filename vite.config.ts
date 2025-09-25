@@ -12,9 +12,6 @@ export default defineConfig({
 		tsConfigPaths(),
 		tanstackStart({
 			customViteReactPlugin: true,
-			spa: {
-				enabled: true,
-			},
 			tsr: {
 				routesDirectory: "src/1-app/routes",
 				generatedRouteTree: "src/1-app/routeTree.gen.ts",

@@ -23,7 +23,7 @@ export const Route = createRootRoute({
 function RootComponent() {
 	return (
 		<RootDocument>
-				<Outlet />
+			<Outlet />
 		</RootDocument>
 	);
 }
