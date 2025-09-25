@@ -1,3 +1,4 @@
+import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
@@ -11,6 +12,9 @@ export default defineConfig({
 		tsConfigPaths(),
 		tanstackStart({
 			customViteReactPlugin: true,
+			spa: {
+				enabled: true,
+			},
 			tsr: {
 				routesDirectory: "src/1-app/routes",
 				generatedRouteTree: "src/1-app/routeTree.gen.ts",
@@ -19,5 +23,6 @@ export default defineConfig({
 			},
 		}),
 		viteReact(),
+		tailwindcss(),
 	],
 });

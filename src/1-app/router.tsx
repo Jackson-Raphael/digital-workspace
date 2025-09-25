@@ -1,5 +1,4 @@
 // src/router.tsx
-import "@fontsource/public-sans";
 import { createRouter as createTanStackRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 
