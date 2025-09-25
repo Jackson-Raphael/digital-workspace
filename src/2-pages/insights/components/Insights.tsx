@@ -1,7 +1,9 @@
+import {Heading} from "@chakra-ui/react"
+
 const Insights = () => {
   return (
     <div>
-      <h1>Insights</h1>
+      <Heading as="h1">Insights</Heading>
     </div>
   );
 };

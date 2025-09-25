@@ -14,5 +14,4 @@ We fully embrace type safe component based design. Styles are handled by passing
 
 
 # Get Started
-Props typegen (amazing)
 https://www.chakra-ui.com/docs/get-started/cli

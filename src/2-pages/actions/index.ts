@@ -1,3 +1,3 @@
-import Actions from './components/Actions';
+import Actions from "./components/Actions";
 
 export { Actions };
