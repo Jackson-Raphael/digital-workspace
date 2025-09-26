@@ -56,8 +56,8 @@ const Header = ({ onMenuClick }: HeaderProps) => {
 						variant="light"
 						onPress={onMenuClick}
 					>
-						{/* <MdMenu className="h-6 w-6" /> */}
-						<MdMenuOpen className="h-6 w-6" />
+						<MdMenu className="h-6 w-6" />
+						{/* <MdMenuOpen className="h-6 w-6" /> */}
 					</Button>
 				</div>
 				<Logo />
@@ -97,9 +97,11 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 	return (
 		<>
 			{isOpen && (
-				<div
-					className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+				<button
+					type="button"
+					className="fixed inset-0 z-40 cursor-default bg-black/50 p-4 lg:hidden"
 					onClick={onClose}
+					aria-label="Close sidebar"
 				/>
 			)}
 
