@@ -1,17 +1,12 @@
-import { useId } from "react";
-
 const checksColor = "#f47216";
 const textColor = "#154281";
 
 const Logo = () => {
-	const svgId = useId();
 	return (
-		<div className="aspect-[3.634/1] h-[34px]">
+		<div className="aspect-[3.634/1] h-[32px]">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 1019.0533 280.38666"
-				id={svgId}
-				aria-labelledby={`${svgId}-title`}
 				role="img"
 			>
 				<title>NSW SES Secondary Logo</title>
