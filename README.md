@@ -2,7 +2,7 @@
 
 An app template for our digital workplace full stack applications.
 
-Built using Tanstack start, tailwind, headlessUI, and daisyUI.
+Built using Tanstack start, tailwind, and headlessUI.
 
 Project is structured following feature sliced design.
 

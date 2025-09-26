@@ -1,4 +1,5 @@
 /// <reference types="vite/client" />
+import { HeroUIProvider } from "@heroui/system";
 
 import {
 	createRootRoute,
@@ -23,7 +24,9 @@ export const Route = createRootRoute({
 function RootComponent() {
 	return (
 		<RootDocument>
-			<Outlet />
+			<HeroUIProvider>
+				<Outlet />
+			</HeroUIProvider>
 		</RootDocument>
 	);
 }
