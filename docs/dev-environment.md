@@ -1,4 +1,18 @@
-# AI
+# Dev Environment
+
+## Installing Pre-Requsites
+
+- VSCode
+- Docker Desktop
+- Node.JS
+
+## Recommendations
+
+- Ensure you have access to graph explorer in azure.
+- Read the doc sites of our core tech stack.
+- 
+
+## AI Instructions
 
 WIP custom instructions for any AI you want to use.
 

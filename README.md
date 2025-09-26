@@ -1,16 +1,29 @@
 # Digital Workplace App Template
 
-An app template for our digital workplace full stack applications.
+## Contact
 
-Built using Tanstack start, tailwind, and headlessUI.
+jackson.raphael@ses.nsw.gov.au
 
-Project is structured following feature sliced design.
+Always happy to answer questions/help where I can.
 
-We do NOT use server side rendering, it is disabled app wide.
+## Overview
 
-Server side app logic is best kept to server functions. 
+A feature complete, SES branded full-stack template for our digital workplace applications built with Typescript, React, Tanstack Start, Tailwindcss, HeroUI, and MSSQL.
 
-API routes are for exposing data to other projects and must be strictly versioned to avoid breaking changes affecting other business areas.
+# Getting Started
 
-# Get Started
+1. Read `./docs/dev-environment.md` before proceeding
+
+2. Clone this template and setup a new repo for your project
+
+3. Run `npm install` to load the templates dependencies
+
+4. Run `docker compose up -D` to start your local sql server in the background
+
+5. Run  `npm run dev` to start the vite server
+
+
+# Further Reading
+
+Full documentation of this template can be found in the `./docs` folder of this repo.
 
