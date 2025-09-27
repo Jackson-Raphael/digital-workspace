@@ -1,6 +1,7 @@
-# React Patterns
+# Code Patterns
 
 I'm still new to React and learning these patterns myself, so this page is very much a work in progress. However there are some patterns I feel quite strongly about.
+
 
 ## Tailwind Merging
 

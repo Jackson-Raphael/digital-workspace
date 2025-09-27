@@ -1,5 +1,5 @@
+// src/routes/__root.tsx
 /// <reference types="vite/client" />
-import { HeroUIProvider } from "@heroui/system";
 
 import {
 	createRootRoute,
@@ -8,15 +8,21 @@ import {
 	Scripts,
 } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import styles from "~/1-app/styles.css?url";
+
 export const Route = createRootRoute({
 	head: () => ({
 		meta: [
-			{ charSet: "utf-8" },
-			{ name: "viewport", content: "width=device-width, initial-scale=1" },
-			{ title: "Digital Workspace" },
+			{
+				charSet: "utf-8",
+			},
+			{
+				name: "viewport",
+				content: "width=device-width, initial-scale=1",
+			},
+			{
+				title: "TanStack Start Starter",
+			},
 		],
-		links: [{ rel: "stylesheet", href: styles }],
 	}),
 	component: RootComponent,
 });
@@ -24,9 +30,7 @@ export const Route = createRootRoute({
 function RootComponent() {
 	return (
 		<RootDocument>
-			<HeroUIProvider>
-				<Outlet />
-			</HeroUIProvider>
+			<Outlet />
 		</RootDocument>
 	);
 }

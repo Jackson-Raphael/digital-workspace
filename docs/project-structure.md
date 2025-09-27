@@ -2,12 +2,13 @@
 
 ## Overview
 
-The project follows a strict structure enforced with custom rules setup on our linter.
+The project follows a strict structure enforced with custom rules setup on our linter. See custom-linting page for specifics.
 
 ## Important Notes
 
 - The `~` character is setup as an alias to the `src` folder in tsconfig.
 - The location of TanStack Starts routing related boilerplate has been changed to fit feature sliced design. (See vite.config.ts)
+- The app/routes folder is structural. Point towards your page slices for implementation of UI and business logic.
 - FSD segments are not enforced. Feel free to structure your slices how you want only layering/slicing rules are enforced.
 
 ## Feature Sliced Design
@@ -21,6 +22,8 @@ I explain feature sliced design and try to provide some conxtual examples below,
 ## Layers
 
 ### App
+
+Routing, providers, global styles
 
 ### Pages
 

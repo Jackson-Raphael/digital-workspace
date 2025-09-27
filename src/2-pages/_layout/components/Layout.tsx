@@ -1,28 +1,34 @@
 // Manages state and pass it down via props to subcomponents
-function DashboardLayout({ children, ...props }) {
-	return <div {...props}>{children}</div>;
+function Layout({ children, ...props }) {
+	// return <div {...props}>{children}</div>;
+	return (
+		<>
+			<h1>Hello</h1>
+			{children}
+		</>
+	);
 }
 
 // Subcomponents (attached as static properties for compound pattern)
-function DashboardSidebar({ children, ...props }) {
+function LayoutSidebar({ children, ...props }) {
 	return <aside {...props}>{children}</aside>;
 }
 
-function DashboardHeader({ children, ...props }) {
+function LayoutHeader({ children, ...props }) {
 	return <header {...props}>{children}</header>;
 }
 
-function DashboardToggle({ ...props }) {
+function LayoutToggle({ ...props }) {
 	return <button {...props}>Toggle Sidebar</button>;
 }
 
-function DashboardMain({ children, ...props }) {
+function LayoutMain({ children, ...props }) {
 	return <main {...props}>{children}</main>;
 }
 
-DashboardLayout.Sidebar = DashboardSidebar;
-DashboardLayout.Header = DashboardHeader;
-DashboardLayout.Toggle = DashboardToggle;
-DashboardLayout.Main = DashboardMain;
+Layout.Sidebar = LayoutSidebar;
+Layout.Header = LayoutHeader;
+Layout.Toggle = LayoutToggle;
+Layout.Main = LayoutMain;
 
-export { DashboardLayout };
+export { Layout };
