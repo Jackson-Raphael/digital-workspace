@@ -11,12 +11,7 @@ export default defineConfig({
 	plugins: [
 		tsConfigPaths(),
 		tanstackStart({
-			router: {
-				routesDirectory: "1-app/routes",
-				generatedRouteTree: "routeTree.gen.ts",
-				routeFileIgnorePrefix: "-",
-				quoteStyle: "single",
-			},
+			srcDirectory: "src/1-app",
 		}),
 		viteReact(),
 		tailwindcss(),
